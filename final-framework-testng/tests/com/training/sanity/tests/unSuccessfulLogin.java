@@ -15,8 +15,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class LoginTests {
-
+public class unSuccessfulLogin {
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;
@@ -48,10 +47,8 @@ public class LoginTests {
 	@Test
 	public void validLoginTest() {
 		loginPOM.clickLoginLink();
-		screenShot.captureScreenShot("manz1");
 		loginPOM.sendEmail("manz@mass.com");
-		loginPOM.sendPassword("mass123");
+		loginPOM.sendPassword("mass1234");
 		loginPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("manz");
 	}
 }

@@ -13,18 +13,25 @@ public class LoginPOM {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(id="login")
-	private WebElement userName; 
+	@FindBy(linkText="Log in")
+	private WebElement loginLink;
 	
-	@FindBy(id="password")
+	@FindBy(id="Email")
+	private WebElement email; 
+	
+	@FindBy(id="Password")
 	private WebElement password;
 	
-	@FindBy(id="formLogin_submitAuth")
+	@FindBy(xpath="//input[@value='Log in']")
 	private WebElement loginBtn; 
 	
-	public void sendUserName(String userName) {
-		this.userName.clear();
-		this.userName.sendKeys(userName);
+	public void clickLoginLink() {
+		this.loginLink.click();
+	}
+	
+	public void sendEmail(String userName) {
+		this.email.clear();
+		this.email.sendKeys(userName);
 	}
 	
 	public void sendPassword(String password) {
